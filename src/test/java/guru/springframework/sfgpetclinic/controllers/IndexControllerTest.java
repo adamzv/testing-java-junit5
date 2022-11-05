@@ -9,6 +9,7 @@ import org.junit.jupiter.api.condition.OS;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -25,6 +26,9 @@ class IndexControllerTest {
     @Test
     void index() {
         assertEquals("index", controller.index());
+
+        // AssertJ
+        assertThat(controller.index()).isEqualTo("index");
     }
 
     @DisplayName("Test exception")
